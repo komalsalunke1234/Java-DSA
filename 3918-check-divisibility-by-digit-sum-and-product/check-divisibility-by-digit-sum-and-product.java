@@ -1,19 +1,13 @@
 class Solution {
     public boolean checkDivisibility(int n) {
-        int temp=n;
-        int s=0;
-        int p=1;
-
-        while(temp>0){
-            int digit=temp%10;
-                 s+=digit;
-                 p*=digit;
-                 temp/=10;
-
-
+        String str=String.valueOf(n);
+        int sum=0;
+        int product=1;
+        for(int i=0;i<str.length();i++){
+            int digit=str.charAt(i)-'0';
+            sum+=digit;
+            product*=digit;
         }
-        return n%(s+p)==0;
-
-
+        return n%(sum+product)==0;
     }
 }
